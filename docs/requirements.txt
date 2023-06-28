@@ -1,0 +1,13 @@
+# ilthermopy
+requests
+pandas
+importlib_resources ; python_version < '3.9'
+
+# docs
+sphinx
+sphinx_gallery
+sphinx-rtd-theme
+notebook
+pandoc
+nbsphinx
+# nbclient
