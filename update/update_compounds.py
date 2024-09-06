@@ -234,7 +234,7 @@ if __name__ == '__main__':
         # get data
         print('\nLoading data ...')
         df = get_current_compounds()
-        cmps = ilt.GetCompounds().data
+        cmps = ilt.GetSavedCompounds().data
         
         # get missing data
         print('\nPreparing missing compounds ...')
