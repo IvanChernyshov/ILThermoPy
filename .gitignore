@@ -1,6 +1,5 @@
 # project-specific
-update_compounds/
-scripts/data/*
+update/data/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
