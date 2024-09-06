@@ -40,4 +40,6 @@
 
 3. [Documentation](https://ilthermopy.readthedocs.io/): cookbook, descriptive API, and other useful information.
 
+4. [Update tools](update/): script for semi-automatic update of structural information of new ILThermo compounds after database's update.
+
 

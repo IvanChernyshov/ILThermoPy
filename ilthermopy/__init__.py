@@ -6,14 +6,14 @@ Attributes:
 
 '''
 
-__version__ = '1.0.0'
-__updated__ = 'June 28, 2023'
+__version__ = '1.1.0'
+__updated__ = 'September 06, 2024'
 __license__ = 'MIT'
 
 
 from ilthermopy.updates import CheckLastUpdate
 from ilthermopy.data_structs import PropertyList
-from ilthermopy.compound_list import GetCompounds
+from ilthermopy.compound_list import GetSavedCompounds
 from ilthermopy.search import ShowPropertyList, Search, GetAllEntries
 from ilthermopy.data_structs import GetEntry
 

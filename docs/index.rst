@@ -7,7 +7,7 @@ Welcome to ILThermoPy's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   Cookbook <source/cookbook>
+   Cookbook <source/cookbook.ipynb>
    Package API <source/api>
    Changelog <source/changelog>
 
@@ -56,6 +56,7 @@ Useful links
 1. `ILThermo 2.0`_: webapp accessing ILThermo 2.0 database.
 2. `GitHub`_: GitHub page of the package.
 3. `PyPI package`_: PyPI page of the package.
+4. `Update tools`_: script for semi-automatic update of structural information of new ILThermo compounds after database's update.
 
 
 Indices and tables
@@ -69,3 +70,4 @@ Indices and tables
 .. _ILThermo 2.0: https://ilthermo.boulder.nist.gov/
 .. _GitHub: https://github.com/IvanChernyshov/ILThermoPy
 .. _PyPI package: https://pypi.org/project/ilthermopy/
+.. _Update tools: https://github.com/IvanChernyshov/ILThermoPy/tree/main/update

@@ -29,7 +29,7 @@ class Compounds():
     '''dictionary mapping ILThermo's compound names to SMILES'''
 
 
-def GetCompounds() -> Compounds:
+def GetSavedCompounds() -> Compounds:
     '''Initializes Compounds object from pre-readied csv-file
     
     Returns:
@@ -49,5 +49,5 @@ def GetCompounds() -> Compounds:
     return compounds
 
 
-_compounds = GetCompounds()
+_compounds = GetSavedCompounds()
 

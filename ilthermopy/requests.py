@@ -43,7 +43,7 @@ def GetPropertyList() -> dict:
     
     Returns:
         dictionary containing two-level structured info on
-            currently available physchemical properties and their API keys
+        currently available physchemical properties and their API keys
     
     '''
     r = _requests.get(PROPS_URL)
@@ -93,7 +93,7 @@ def GetEntryData(setid: str) -> dict:
     
     Returns:
         dictionary containing info on data entry, including reference, compounds,
-            physico-chemical data, etc.
+        physico-chemical data, etc.
     
     '''
     
