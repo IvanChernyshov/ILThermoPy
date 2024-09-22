@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ILThermoPy CookBook &mdash; ILThermoPy 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ILThermoPy API" href="api.html" />
+    <link rel="prev" title="Welcome to ILThermoPy’s documentation!" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ILThermoPy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Basic-search">Basic search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Property-search">Property search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Retrieving-data">Retrieving data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Substructure-search">Substructure search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Update-status">Update status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Substructure search</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Resonance">Resonance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Package API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ILThermoPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ILThermoPy CookBook</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/cookbook.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ILThermoPy-CookBook">
+<h1>ILThermoPy CookBook<a class="headerlink" href="#ILThermoPy-CookBook" title="Link to this heading"></a></h1>
+<p>ILThermo 2.0 is the biggest curated database, containing a wide varieties of experimental data on ionic liquids. This cookbook shows how this database can be accessed in automatic mode via the ILThermoPy package.</p>
+<section id="Basic-search">
+<h2>Basic search<a class="headerlink" href="#Basic-search" title="Link to this heading"></a></h2>
+<p>Functionality of ILThermo 2.0 allows one to search experimental data on ionic liquids by the name/CAS RN/chemical formula of compounds, number of components, measured property, and parameters of the source article (for more details see the description of the <code class="docutils literal notranslate"><span class="pre">ilt.Search</span></code> function):</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ilthermopy</span> <span class="k">as</span> <span class="nn">ilt</span>
+
+<span class="n">help</span><span class="p">(</span><span class="n">ilt</span><span class="o">.</span><span class="n">Search</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Help on function Search in module ilthermopy.search:
+
+Search(compound: Optional[str] = None, n_compounds: Literal[None, 1, 2, 3] = None, prop: Optional[str] = None, prop_key: Optional[str] = None, year: Optional[int] = None, author: Optional[str] = None, keywords: Optional[str] = None) -&gt; pandas.core.frame.DataFrame
+    Runs ILThermo search and returns results as a dataframe
+
+    Arguments:
+        compound: chemical formula, CAS registry number, or name (part or full)
+        n_compounds: number of mixture compounds
+        prop: name of physico-chemical property, only used if prop_key is not specified
+        prop_key: key of physico-chemical property (view available via GetPropertyList)
+        year: publication year
+        author: author&#39;s last name
+        keywords: keywords presumably specified in paper&#39;s title
+
+    Returns:
+        dataframe containing main info on found entries
+
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># search individual compounds published in 2004</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">ilt</span><span class="o">.</span><span class="n">Search</span><span class="p">(</span><span class="n">n_compounds</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="mi">2004</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>reference</th>
+      <th>property</th>
+      <th>phases</th>
+      <th>num_phases</th>
+      <th>num_components</th>
+      <th>num_data_points</th>
+      <th>cmp1</th>
+      <th>cmp1_id</th>
+      <th>cmp1_smiles</th>
+      <th>cmp2</th>
+      <th>cmp2_id</th>
+      <th>cmp2_smiles</th>
+      <th>cmp3</th>
+      <th>cmp3_id</th>
+      <th>cmp3_smiles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>vffQK</td>
+      <td>Kabo et al. (2004)</td>
+      <td>Heat capacity at constant pressure</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1528</td>
+      <td>1-butyl-3-methylimidazolium hexafluorophosphate</td>
+      <td>ABChJv</td>
+      <td>CCCC[n+]1ccn(C)c1.F[P-](F)(F)(F)(F)F</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>aNLkc</td>
+      <td>Kabo et al. (2004)</td>
+      <td>Heat capacity at vapor saturation pressure</td>
+      <td>Crystal;Gas</td>
+      <td>2</td>
+      <td>1</td>
+      <td>137</td>
+      <td>1-butyl-3-methylimidazolium hexafluorophosphate</td>
+      <td>ABChJv</td>
+      <td>CCCC[n+]1ccn(C)c1.F[P-](F)(F)(F)(F)F</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>bNHLG</td>
+      <td>Kabo et al. (2004)</td>
+      <td>Heat capacity at vapor saturation pressure</td>
+      <td>Glass;Gas</td>
+      <td>2</td>
+      <td>1</td>
+      <td>111</td>
+      <td>1-butyl-3-methylimidazolium hexafluorophosphate</td>
+      <td>ABChJv</td>
+      <td>CCCC[n+]1ccn(C)c1.F[P-](F)(F)(F)(F)F</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>HzjQF</td>
+      <td>Sun et al. (2004)</td>
+      <td>Heat capacity at constant pressure</td>
+      <td>Crystal</td>
+      <td>1</td>
+      <td>1</td>
+      <td>111</td>
+      <td>4,6-dimethyl-N-phenylpyrimidin-2-amine dodecan...</td>
+      <td>ABYrQW</td>
+      <td>CCCCCCCCCCCC(=O)[O-].Cc1cc(C)nc(Nc2ccccc2)[nH+]1</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>sBpKf</td>
+      <td>Kabo et al. (2004)</td>
+      <td>Heat capacity at vapor saturation pressure</td>
+      <td>Liquid;Gas</td>
+      <td>2</td>
+      <td>1</td>
+      <td>42</td>
+      <td>1-butyl-3-methylimidazolium hexafluorophosphate</td>
+      <td>ABChJv</td>
+      <td>CCCC[n+]1ccn(C)c1.F[P-](F)(F)(F)(F)F</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>272</th>
+      <td>CymfL</td>
+      <td>Zhao et al. (2004b)</td>
+      <td>Viscosity</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1-(4-cyanobutyl)-3-methylimidazolium tetrafluo...</td>
+      <td>AAwOgS</td>
+      <td>Cn1cc[n+](CCCCC#N)c1.F[B-](F)(F)F</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>273</th>
+      <td>onFYh</td>
+      <td>Zhao et al. (2004b)</td>
+      <td>Density</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1-butyl-3-methylimidazolium hexafluorophosphate</td>
+      <td>ABChJv</td>
+      <td>CCCC[n+]1ccn(C)c1.F[P-](F)(F)(F)(F)F</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>274</th>
+      <td>NaZFE</td>
+      <td>Zhao et al. (2004b)</td>
+      <td>Viscosity</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1-butyl-3-methylimidazolium hexafluorophosphate</td>
+      <td>ABChJv</td>
+      <td>CCCC[n+]1ccn(C)c1.F[P-](F)(F)(F)(F)F</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>275</th>
+      <td>YbIco</td>
+      <td>Zhao et al. (2004b)</td>
+      <td>Density</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1-butyl-3-methylimidazolium tetrafluoroborate</td>
+      <td>AArYBF</td>
+      <td>CCCC[n+]1ccn(C)c1.F[B-](F)(F)F</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>276</th>
+      <td>HwTsD</td>
+      <td>Zhao et al. (2004b)</td>
+      <td>Equilibrium temperature</td>
+      <td>Crystal;Liquid</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3-(3-cyanopropyl)-1-methylimidazolium chloride</td>
+      <td>AAjkls</td>
+      <td>CCCC[n+]1cccc(C)c1.[Cl-]</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+<p>277 rows × 16 columns</p>
+</div></div>
+</div>
+<p>Output dataframe contains main information for each found entry, namely:</p>
+<ul class="simple">
+<li><p><strong>id</strong>: ILThermo entry ID, can be used to retrieve data via <code class="docutils literal notranslate"><span class="pre">ilt.GetEntry</span></code> function;</p></li>
+<li><p><strong>reference</strong>: short notation of the source paper;</p></li>
+<li><p><strong>property</strong>: measured property;</p></li>
+<li><p><strong>phases</strong>: semicolon-separated list of the system’s phases;</p></li>
+<li><p><strong>num_phases</strong>, <strong>num_components</strong>, <strong>num_data_points</strong>: number of system’s components and phases, and number of measured data points;</p></li>
+<li><p><strong>cmp</strong>, <strong>cmp_id</strong>, <strong>cmp_smiles</strong>: compound name, ILThermo compound ID, and SMILES (all enumerated for compounds #1 - #3).</p></li>
+</ul>
+</section>
+<section id="Property-search">
+<h2>Property search<a class="headerlink" href="#Property-search" title="Link to this heading"></a></h2>
+<p>To search by property, one need either property name or ILThermo property ID. Since they are internal parameters of the ILThermo 2.0 web interface, they must be obtained via the <code class="docutils literal notranslate"><span class="pre">ilt.ShowPropertyList</span></code> function:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ilt</span><span class="o">.</span><span class="n">ShowPropertyList</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+# Activity, fugacity, and osmotic properties
+BPpY: Activity
+VjHv: Osmotic coefficient
+
+# Composition at phase equilibrium
+dNip: Composition at phase equilibrium
+MbEq: Eutectic composition
+lIUh: Henry&#39;s Law constant
+eCTp: Ostwald coefficient
+neae: Tieline
+WbZo: Upper consolute composition
+
+# Critical properties
+BPNz: Critical pressure
+rDNz: Critical temperature
+qpSz: Lower consolute temperature
+MvMG: Upper consolute pressure
+bRXE: Upper consolute temperature
+
+# Excess, partial, and apparent energetic properties
+cpbY: Apparent enthalpy
+teHk: Apparent molar heat capacity
+rTYh: Enthalpy of dilution
+aeiA: Enthalpy of mixing of a binary solvent with component
+VTiT: Enthalpy of solution
+brzp: Excess enthalpy
+Sqxi: Partial molar enthalpy
+mFmK: Partial molar heat capacity
+
+# Heat capacity and derived properties
+tnYd: Enthalpy
+kthO: Enthalpy function {H(T)-H(0)}/T
+qdUt: Entropy
+IZSt: Heat capacity at constant pressure
+KvgF: Heat capacity at constant volume
+zJIE: Heat capacity at vapor saturation pressure
+
+# Phase transition properties
+CXUw: Enthalpy of transition or fusion
+iaOF: Enthalpy of vaporization or sublimation
+SwyC: Equilibrium pressure
+ghKa: Equilibrium temperature
+lnrs: Eutectic temperature
+LUaF: Monotectic temperature
+NmYB: Normal melting temperature
+
+# Refraction, surface tension, and speed of sound
+YQDr: Interfacial tension
+bNnk: Refractive index
+imdq: Relative permittivity
+NlQd: Speed of sound
+ETUw: Surface tension liquid-gas
+
+# Transport properties
+HooV: Binary diffusion coefficient
+Ylwl: Electrical conductivity
+jjnq: Self diffusion coefficient
+pAFI: Thermal conductivity
+KTcm: Thermal diffusivity
+vBeU: Tracer diffusion coefficient
+PusA: Viscosity
+
+# Vapor pressure, boiling temperature, and azeotropic T &amp; P
+hkog: Normal boiling temperature
+HwfJ: Vapor or sublimation pressure
+
+# Volumetric properties
+WxCH: Adiabatic compressibility
+zNjL: Apparent molar volume
+JkYu: Density
+psRu: Excess volume
+hXfd: Isobaric coefficient of volume expansion
+Bvon: Isothermal compressibility
+LNxL: Partial molar volume
+
+
+</pre></div></div>
+</div>
+<p>If your old code raises <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> during the property search, this indicates that the property ID and/or property name have changed in ILThermo 2.0 after update(s). In this case, simply correct the value to the actual one.</p>
+</section>
+<section id="Retrieving-data">
+<h2>Retrieving data<a class="headerlink" href="#Retrieving-data" title="Link to this heading"></a></h2>
+<p>To load data on the found entries use the <code class="docutils literal notranslate"><span class="pre">ilt.GetEntry</span></code> function, which takes entry ID as input:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># random search</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">ilt</span><span class="o">.</span><span class="n">Search</span><span class="p">(</span><span class="n">n_compounds</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="mi">2004</span><span class="p">)</span>
+<span class="c1"># downloading first 10 entries</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">ilt</span><span class="o">.</span><span class="n">GetEntry</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">10</span><span class="p">]]</span>
+<span class="c1"># get first entry</span>
+<span class="n">entry</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">entry</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Entry(id=&#39;srPOo&#39;, ref=Reference(full=&#39;Rebelo, L. P. N.; Najdanovic-Visak, V.; Visak, Z. P.; Nunes da Ponte, M.; Szydlowski, J.; Cerdeirina, C. A.; Troncoso, J.; Romani, L.; Esperanca, J. M. S. S.; Guedes, H. J. R.; de Sousa, H. C. (2004) Green Chem. 6(8), 369-381.&#39;), property=&#39;Excess volume&#39;, property_type=&#39;Volumetric properties&#39;, phases=[&#39;Liquid&#39;], components=[Compound(id=&#39;AADYJk&#39;, name=&#39;water&#39;, smiles=&#39;O&#39;), Compound(id=&#39;AArYBF&#39;, name=&#39;1-butyl-3-methylimidazolium tetrafluoroborate&#39;, smiles=&#39;CCCC[n+]1ccn(C)c1.F[B-](F)(F)F&#39;)], num_data_points=185)
+</pre></div></div>
+</div>
+<p>Entry object contains detailed information on the data entry, including:</p>
+<ul class="simple">
+<li><p><strong>id</strong>: data entry ID;</p></li>
+<li><p><strong>ref</strong>: reference to the source article;</p></li>
+<li><p><strong>property</strong>, <strong>property_type</strong>: measured property and its type;</p></li>
+<li><p><strong>phases</strong>: list of system’s phases;</p></li>
+<li><p><strong>components</strong>: list of system’s components;</p></li>
+<li><p><strong>num_phases</strong>, <strong>num_components</strong>, <strong>num_data_points</strong>: number of system’s components and phases, and number of measured data points;</p></li>
+<li><p><strong>expmeth</strong>: experimental method used to obtain the physchemical data;</p></li>
+<li><p><strong>solvent</strong>: solvent used in the experiment;</p></li>
+<li><p><strong>constraints</strong>: list of experimental constraints;</p></li>
+<li><p><strong>data</strong>: dataframe containing measured data;</p></li>
+<li><p><strong>header</strong>: full column names to the <strong>data</strong>, containing info on the measured property, measurement units, component, and phase;</p></li>
+<li><p><strong>footnotes</strong>: notes to the <strong>data</strong>;</p></li>
+<li><p><strong>response</strong>: original response.</p></li>
+</ul>
+<p>Let’s illustrate the main attributes. Reference contains reference itself and the article’s title:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entry</span><span class="o">.</span><span class="n">ref</span><span class="o">.</span><span class="n">full</span><span class="p">,</span> <span class="n">entry</span><span class="o">.</span><span class="n">ref</span><span class="o">.</span><span class="n">title</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(&#39;Rebelo, L. P. N.; Najdanovic-Visak, V.; Visak, Z. P.; Nunes da Ponte, M.; Szydlowski, J.; Cerdeirina, C. A.; Troncoso, J.; Romani, L.; Esperanca, J. M. S. S.; Guedes, H. J. R.; de Sousa, H. C. (2004) Green Chem. 6(8), 369-381.&#39;,
+ &#39;A detailed thermodynamic analysis of [C4mim][BF4] + water as a case study to model ionic liquid aqueous solutions&#39;)
+</pre></div></div>
+</div>
+<p>Each component is a Compound object and contains the following fields:</p>
+<ul class="simple">
+<li><p><strong>id</strong>: compound id;</p></li>
+<li><p><strong>name</strong>: compound name;</p></li>
+<li><p><strong>formula</strong>: chemical formula;</p></li>
+<li><p><strong>smiles</strong>: compound SMILES;</p></li>
+<li><p><strong>smiles_error</strong>: if compounds SMILES was not retrieved, this field describes the reason;</p></li>
+<li><p><strong>sample</strong>: dictionary containing info on compound’s source, purity, etc.;</p></li>
+<li><p><strong>mw</strong>: molar weight of the compound, g/mol.</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmp1</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">components</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">cmp1</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">cmp1</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">cmp1</span><span class="o">.</span><span class="n">formula</span><span class="p">,</span> <span class="n">cmp1</span><span class="o">.</span><span class="n">smiles</span><span class="p">,</span> <span class="n">cmp1</span><span class="o">.</span><span class="n">smiles_error</span><span class="p">,</span> <span class="n">cmp1</span><span class="o">.</span><span class="n">sample</span><span class="p">,</span> <span class="n">cmp1</span><span class="o">.</span><span class="n">mw</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(&#39;AADYJk&#39;,
+ &#39;water&#39;,
+ &#39;H2 O&#39;,
+ &#39;O&#39;,
+ None,
+ {&#39;Source&#39;: &#39;commercial source&#39;,
+  &#39;Purification&#39;: &#39;estimated by the compiler&#39;,
+  &#39;Purity&#39;: &#39;99.8 mass %(fractional distillation)&#39;},
+ 18.02)
+</pre></div></div>
+</div>
+<p><strong>data</strong> field contains dataframe with measured physchemical data. Its columns has short names V1, V2, V3, etc. for all variables. If for some variable the measurement error was provided, the corresponding column will be <code class="docutils literal notranslate"><span class="pre">d</span></code> concatanated to the column name of the original value, e.g. <code class="docutils literal notranslate"><span class="pre">V1</span></code> and <code class="docutils literal notranslate"><span class="pre">dV1</span></code>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entry</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>V1</th>
+      <th>V2</th>
+      <th>V3</th>
+      <th>V4</th>
+      <th>dV4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>100.0</td>
+      <td>0.0040</td>
+      <td>278.15</td>
+      <td>-3.600000e-08</td>
+      <td>1.000000e-08</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>100.0</td>
+      <td>0.0040</td>
+      <td>283.15</td>
+      <td>-3.350000e-08</td>
+      <td>1.000000e-08</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>100.0</td>
+      <td>0.0040</td>
+      <td>288.15</td>
+      <td>-3.070000e-08</td>
+      <td>1.000000e-08</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>100.0</td>
+      <td>0.0040</td>
+      <td>293.15</td>
+      <td>-2.830000e-08</td>
+      <td>1.000000e-08</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>100.0</td>
+      <td>0.0040</td>
+      <td>298.15</td>
+      <td>-2.580000e-08</td>
+      <td>1.000000e-08</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>60000.0</td>
+      <td>0.5905</td>
+      <td>298.15</td>
+      <td>4.620000e-07</td>
+      <td>1.100000e-08</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>60000.0</td>
+      <td>0.5905</td>
+      <td>303.15</td>
+      <td>4.550000e-07</td>
+      <td>1.100000e-08</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>60000.0</td>
+      <td>0.5905</td>
+      <td>313.15</td>
+      <td>4.510000e-07</td>
+      <td>1.100000e-08</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>60000.0</td>
+      <td>0.5905</td>
+      <td>323.15</td>
+      <td>5.420000e-07</td>
+      <td>1.200000e-08</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>60000.0</td>
+      <td>0.5905</td>
+      <td>333.15</td>
+      <td>5.830000e-07</td>
+      <td>1.200000e-08</td>
+    </tr>
+  </tbody>
+</table>
+<p>185 rows × 5 columns</p>
+</div></div>
+</div>
+<p><strong>header</strong> field contains full names of the corresponding columns, including measured property, its measurement unit, and optionally compound and phase:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entry</span><span class="o">.</span><span class="n">header</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;V1&#39;: &#39;Pressure, kPa&#39;,
+ &#39;V2&#39;: &#39;Mole fraction of 1-butyl-3-methylimidazolium tetrafluoroborate =&gt; Liquid&#39;,
+ &#39;V3&#39;: &#39;Temperature, K&#39;,
+ &#39;V4&#39;: &#39;Excess volume, m&lt;SUP&gt;3&lt;/SUP&gt;/mol =&gt; Liquid&#39;,
+ &#39;dV4&#39;: &#39;Error of excess volume, m&lt;SUP&gt;3&lt;/SUP&gt;/mol =&gt; Liquid&#39;}
+</pre></div></div>
+</div>
+<p>Combining data entries formatted in this way is possible, albeit difficult. However, that is a problem of a particular database, and such a task is beyound the scope of this API.</p>
+</section>
+<section id="Substructure-search">
+<h2>Substructure search<a class="headerlink" href="#Substructure-search" title="Link to this heading"></a></h2>
+<section id="Update-status">
+<h3>Update status<a class="headerlink" href="#Update-status" title="Link to this heading"></a></h3>
+<p>Structural information of the ILThermo compounds is a crucial part of <code class="docutils literal notranslate"><span class="pre">ilthermopy</span></code>. This information is stored in a table format, linking together ILThermo compound ID, compound name, and verified SMILES string. <code class="docutils literal notranslate"><span class="pre">ilthermopy</span></code> usually uses compound IDs to retrieve SMILES, however each update of the ILThermo 2.0 database changes all compound IDs. In this case <code class="docutils literal notranslate"><span class="pre">ilthermopy</span></code> still can retrieve SMILES using compound name, however, that is not a full-proof way and some SMILES can be missing.</p>
+<p>Therefore, it is a good idea to check if <code class="docutils literal notranslate"><span class="pre">ilthermopy</span></code> is up-to-date before you start exploring ILThermo database:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ilt</span><span class="o">.</span><span class="n">CheckLastUpdate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ILThermo 2.0 database was last updated on June 04, 2024
+ilthermopy package was last updated on September 07, 2024
+
+ilthermopy package is up-to-date
+</pre></div></div>
+</div>
+</section>
+<section id="id1">
+<h3>Substructure search<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>The easiest way to search by substructure is to filter all available compounds, and than filter the search output by compound IDs or compound names (if ilthermopy is not up-to-date). Imagine that we want to get all entries containing guanidinium cation. In this case we start with loading preliminary info on all abailable ILThermo entries:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">ilt</span><span class="o">.</span><span class="n">GetAllEntries</span><span class="p">()</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>reference</th>
+      <th>property</th>
+      <th>phases</th>
+      <th>num_phases</th>
+      <th>num_components</th>
+      <th>num_data_points</th>
+      <th>cmp1</th>
+      <th>cmp1_id</th>
+      <th>cmp1_smiles</th>
+      <th>cmp2</th>
+      <th>cmp2_id</th>
+      <th>cmp2_smiles</th>
+      <th>cmp3</th>
+      <th>cmp3_id</th>
+      <th>cmp3_smiles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>vffQK</td>
+      <td>Kabo et al. (2004)</td>
+      <td>Heat capacity at constant pressure</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1528</td>
+      <td>1-butyl-3-methylimidazolium hexafluorophosphate</td>
+      <td>ABChJv</td>
+      <td>CCCC[n+]1ccn(C)c1.F[P-](F)(F)(F)(F)F</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cFdQS</td>
+      <td>Strechan et al. (2008a)</td>
+      <td>Heat capacity at vapor saturation pressure</td>
+      <td>Crystal 2;Gas</td>
+      <td>2</td>
+      <td>1</td>
+      <td>613</td>
+      <td>1-butyl-3-methylimidazolium trifluoroacetate</td>
+      <td>AAwaEi</td>
+      <td>CCCC[n+]1ccn(C)c1.O=C([O-])C(F)(F)F</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>eOKLZ</td>
+      <td>Safarov et al. (2021b)</td>
+      <td>Viscosity</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>1</td>
+      <td>500</td>
+      <td>1-ethyl-3-methylimidazolium dicyanamide</td>
+      <td>AAiEIE</td>
+      <td>CC[n+]1ccn(C)c1.N#C[N-]C#N</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>UkHsx</td>
+      <td>Polikhronidi et al. (2014)</td>
+      <td>Heat capacity at constant pressure</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>1</td>
+      <td>422</td>
+      <td>1-hexyl-3-methylimidazolium bis[(trifluorometh...</td>
+      <td>ABiCtA</td>
+      <td>CCCCCC[n+]1ccn(C)c1.O=S(=O)([N-]S(=O)(=O)C(F)(...</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>BvazU</td>
+      <td>Safarov et al. (2018c)</td>
+      <td>Viscosity</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>1</td>
+      <td>394</td>
+      <td>1-octyl-3-methylimidazolium hexafluorophosphate</td>
+      <td>ABNWoR</td>
+      <td>CCCCCCCC[n+]1ccn(C)c1.F[P-](F)(F)(F)(F)F</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>54204</th>
+      <td>kxodn</td>
+      <td>Zhao et al. (2010a)</td>
+      <td>Composition at phase equilibrium</td>
+      <td>Liquid;Gas</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>carbon dioxide</td>
+      <td>AAIYzl</td>
+      <td>O=C=O</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>2-hydroxy-N-(2-hydroxyethyl)-N-methylethanamin...</td>
+      <td>AAdwMT</td>
+      <td>C[NH+](CCO)CCO.[Cl-]</td>
+    </tr>
+    <tr>
+      <th>54205</th>
+      <td>WDULW</td>
+      <td>Zhao et al. (2010a)</td>
+      <td>Composition at phase equilibrium</td>
+      <td>Liquid;Gas</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>carbon dioxide</td>
+      <td>AAIYzl</td>
+      <td>O=C=O</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>2-hydroxy-N-(2-hydroxyethyl)-N-methylethanamin...</td>
+      <td>AAnpCD</td>
+      <td>C[NH+](CCO)CCO.F[B-](F)(F)F</td>
+    </tr>
+    <tr>
+      <th>54206</th>
+      <td>trauR</td>
+      <td>Zhao et al. (2010a)</td>
+      <td>Composition at phase equilibrium</td>
+      <td>Liquid;Gas</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>carbon dioxide</td>
+      <td>AAIYzl</td>
+      <td>O=C=O</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>2-hydroxyethanaminium tetrafluoroborate</td>
+      <td>AAcgPC</td>
+      <td>F[B-](F)(F)F.[NH3+]CCO</td>
+    </tr>
+    <tr>
+      <th>54207</th>
+      <td>YtOdr</td>
+      <td>Zhao et al. (2010a)</td>
+      <td>Composition at phase equilibrium</td>
+      <td>Liquid;Gas</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>carbon dioxide</td>
+      <td>AAIYzl</td>
+      <td>O=C=O</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>1-butyl-3-methylimidazolium tetrafluoroborate</td>
+      <td>AArYBF</td>
+      <td>CCCC[n+]1ccn(C)c1.F[B-](F)(F)F</td>
+    </tr>
+    <tr>
+      <th>54208</th>
+      <td>xKyGC</td>
+      <td>Zhao et al. (2010a)</td>
+      <td>Composition at phase equilibrium</td>
+      <td>Liquid;Gas</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>triethanolamine</td>
+      <td>AAcjhv</td>
+      <td>OCCN(CCO)CCO</td>
+      <td>carbon dioxide</td>
+      <td>AAIYzl</td>
+      <td>O=C=O</td>
+      <td>1-butyl-3-methylimidazolium tetrafluoroborate</td>
+      <td>AArYBF</td>
+      <td>CCCC[n+]1ccn(C)c1.F[B-](F)(F)F</td>
+    </tr>
+  </tbody>
+</table>
+<p>54209 rows × 16 columns</p>
+</div></div>
+</div>
+<p>Next we get pre-stored list of all ILThermo compounds:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmps</span> <span class="o">=</span> <span class="n">ilt</span><span class="o">.</span><span class="n">GetSavedCompounds</span><span class="p">()</span><span class="o">.</span><span class="n">data</span>
+<span class="n">cmps</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>name</th>
+      <th>smiles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AAAUum</td>
+      <td>hydrogen (normal)</td>
+      <td>[HH]</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AAAomx</td>
+      <td>helium</td>
+      <td>[He]</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AADEIK</td>
+      <td>methane</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AADOkx</td>
+      <td>ammonia</td>
+      <td>N</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AADYJk</td>
+      <td>water</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>4110</th>
+      <td>AFHNfv</td>
+      <td>1,3-bis(3-((3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,...</td>
+      <td>FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F...</td>
+    </tr>
+    <tr>
+      <th>4111</th>
+      <td>AFSFfi</td>
+      <td>3,3',3''-((propane-1,2,3-triyltris(oxy))tris(m...</td>
+      <td>O=S(=O)([N-]S(=O)(=O)C(F)(F)F)C(F)(F)F.O=S(=O)...</td>
+    </tr>
+    <tr>
+      <th>4112</th>
+      <td>AFmxJi</td>
+      <td>3,3',3''-((propane-1,2,3-triyltris(oxy))tris(m...</td>
+      <td>CCCCCCCC[n+]1ccn(COCC(COCn2cc[n+](CCCCCCCC)c2C...</td>
+    </tr>
+    <tr>
+      <th>4113</th>
+      <td>AGbVrm</td>
+      <td>1,1'-(ethane-1,2-diyl)bis(3-(3-((3,3,4,4,5,5,6...</td>
+      <td>FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F...</td>
+    </tr>
+    <tr>
+      <th>4114</th>
+      <td>AGwzVJ</td>
+      <td>1,1'-(decane-1,10-diyl)bis(3-(3-((3,3,4,4,5,5,...</td>
+      <td>FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F...</td>
+    </tr>
+  </tbody>
+</table>
+<p>4115 rows × 3 columns</p>
+</div></div>
+</div>
+<p>And filter them with RDKit package using a substucture search:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">RDLogger</span>
+<span class="n">RDLogger</span><span class="o">.</span><span class="n">DisableLog</span><span class="p">(</span><span class="s1">&#39;rdApp.*&#39;</span><span class="p">)</span> <span class="c1"># hides warnings</span>
+
+<span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smi</span><span class="p">)</span> <span class="k">for</span> <span class="n">smi</span> <span class="ow">in</span> <span class="n">cmps</span><span class="o">.</span><span class="n">smiles</span><span class="p">]</span>
+<span class="n">pat</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="s1">&#39;[NX3;H2]~[CX3](~[NX3;H2])~[NX3;H2]&#39;</span><span class="p">)</span>
+<span class="n">cmps</span> <span class="o">=</span> <span class="n">cmps</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="n">m</span><span class="o">.</span><span class="n">HasSubstructMatch</span><span class="p">(</span><span class="n">pat</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mols</span><span class="p">]]</span>
+<span class="n">cmps</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>name</th>
+      <th>smiles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>595</th>
+      <td>AAavNv</td>
+      <td>Guanidinium bromide</td>
+      <td>NC(N)=[NH2+].[Br-]</td>
+    </tr>
+    <tr>
+      <th>1159</th>
+      <td>AAoLEA</td>
+      <td>guanidinium trifluoromethanesulfonate</td>
+      <td>NC(N)=[NH2+].O=S(=O)([O-])C(F)(F)F</td>
+    </tr>
+    <tr>
+      <th>1243</th>
+      <td>AApejX</td>
+      <td>guanidinium sulfate</td>
+      <td>NC(N)=[NH2+].NC(N)=[NH2+].O=S(=O)([O-])[O-]</td>
+    </tr>
+    <tr>
+      <th>2728</th>
+      <td>ABUxBz</td>
+      <td>guanidinium tetraphenylborate</td>
+      <td>NC(N)=[NH2+].c1ccc([B-](c2ccccc2)(c2ccccc2)c2c...</td>
+    </tr>
+    <tr>
+      <th>3923</th>
+      <td>ACTsEp</td>
+      <td>guanidinium bis(bis(perfluoroethyl)phosphoryl)...</td>
+      <td>NC(N)=[NH2+].O=P([N-]P(=O)(C(F)(F)C(F)(F)F)C(F...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Now we can use obtained compound IDs to filter the search data:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">cmp1_id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">cmps</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="o">|</span> <span class="n">df</span><span class="o">.</span><span class="n">cmp2_id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">cmps</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="o">|</span> <span class="n">df</span><span class="o">.</span><span class="n">cmp3_id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">cmps</span><span class="o">.</span><span class="n">id</span><span class="p">)]</span>
+<span class="n">sub</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>reference</th>
+      <th>property</th>
+      <th>phases</th>
+      <th>num_phases</th>
+      <th>num_components</th>
+      <th>num_data_points</th>
+      <th>cmp1</th>
+      <th>cmp1_id</th>
+      <th>cmp1_smiles</th>
+      <th>cmp2</th>
+      <th>cmp2_id</th>
+      <th>cmp2_smiles</th>
+      <th>cmp3</th>
+      <th>cmp3_id</th>
+      <th>cmp3_smiles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>22465</th>
+      <td>FTOEm</td>
+      <td>Kumar (2007)</td>
+      <td>Osmotic coefficient</td>
+      <td>Liquid;Gas</td>
+      <td>2</td>
+      <td>2</td>
+      <td>28</td>
+      <td>tetramethylammonium chloride</td>
+      <td>AAVDUE</td>
+      <td>C[N+](C)(C)C.[Cl-]</td>
+      <td>guanidinium sulfate</td>
+      <td>AApejX</td>
+      <td>NC(N)=[NH2+].NC(N)=[NH2+].O=S(=O)([O-])[O-]</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>22503</th>
+      <td>eBeqe</td>
+      <td>Sairi et al. (2015)</td>
+      <td>Viscosity</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>2</td>
+      <td>28</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>guanidinium trifluoromethanesulfonate</td>
+      <td>AAoLEA</td>
+      <td>NC(N)=[NH2+].O=S(=O)([O-])C(F)(F)F</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>23959</th>
+      <td>KDBmV</td>
+      <td>Sairi et al. (2015)</td>
+      <td>Density</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>2</td>
+      <td>18</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>guanidinium trifluoromethanesulfonate</td>
+      <td>AAoLEA</td>
+      <td>NC(N)=[NH2+].O=S(=O)([O-])C(F)(F)F</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>24985</th>
+      <td>vQDiO</td>
+      <td>Kumar (2001)</td>
+      <td>Density</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>2</td>
+      <td>14</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>Guanidinium bromide</td>
+      <td>AAavNv</td>
+      <td>NC(N)=[NH2+].[Br-]</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>24986</th>
+      <td>MNutD</td>
+      <td>Kumar (2001)</td>
+      <td>Speed of sound</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>2</td>
+      <td>14</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>Guanidinium bromide</td>
+      <td>AAavNv</td>
+      <td>NC(N)=[NH2+].[Br-]</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>25429</th>
+      <td>jASaU</td>
+      <td>Kumar (2001)</td>
+      <td>Speed of sound</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>2</td>
+      <td>13</td>
+      <td>guanidinium sulfate</td>
+      <td>AApejX</td>
+      <td>NC(N)=[NH2+].NC(N)=[NH2+].O=S(=O)([O-])[O-]</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>25430</th>
+      <td>kKajm</td>
+      <td>Kumar (2001)</td>
+      <td>Density</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>2</td>
+      <td>13</td>
+      <td>guanidinium sulfate</td>
+      <td>AApejX</td>
+      <td>NC(N)=[NH2+].NC(N)=[NH2+].O=S(=O)([O-])[O-]</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>45701</th>
+      <td>MhEvz</td>
+      <td>Ondo and Dohnal (2014)</td>
+      <td>Composition at phase equilibrium</td>
+      <td>Liquid;Crystal of intercomponent compound 1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>guanidinium tetraphenylborate</td>
+      <td>ABUxBz</td>
+      <td>NC(N)=[NH2+].c1ccc([B-](c2ccccc2)(c2ccccc2)c2c...</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>45702</th>
+      <td>BVhqX</td>
+      <td>Ondo and Dohnal (2014)</td>
+      <td>Composition at phase equilibrium</td>
+      <td>Liquid;Crystal of pure component 2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>guanidinium bis(bis(perfluoroethyl)phosphoryl)...</td>
+      <td>ACTsEp</td>
+      <td>NC(N)=[NH2+].O=P([N-]P(=O)(C(F)(F)C(F)(F)F)C(F...</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>45709</th>
+      <td>hRmeZ</td>
+      <td>Ondo and Dohnal (2014)</td>
+      <td>Apparent enthalpy</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>guanidinium tetraphenylborate</td>
+      <td>ABUxBz</td>
+      <td>NC(N)=[NH2+].c1ccc([B-](c2ccccc2)(c2ccccc2)c2c...</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>45710</th>
+      <td>arrKj</td>
+      <td>Ondo and Dohnal (2014)</td>
+      <td>Apparent enthalpy</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>guanidinium bis(bis(perfluoroethyl)phosphoryl)...</td>
+      <td>ACTsEp</td>
+      <td>NC(N)=[NH2+].O=P([N-]P(=O)(C(F)(F)C(F)(F)F)C(F...</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>47776</th>
+      <td>aWGeF</td>
+      <td>Sairi et al. (2015)</td>
+      <td>Density</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>3</td>
+      <td>81</td>
+      <td>N-methyldiethanolamine</td>
+      <td>AAWveB</td>
+      <td>CN(CCO)CCO</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>guanidinium trifluoromethanesulfonate</td>
+      <td>AAoLEA</td>
+      <td>NC(N)=[NH2+].O=S(=O)([O-])C(F)(F)F</td>
+    </tr>
+    <tr>
+      <th>48534</th>
+      <td>woUWv</td>
+      <td>Sairi et al. (2015)</td>
+      <td>Viscosity</td>
+      <td>Liquid</td>
+      <td>1</td>
+      <td>3</td>
+      <td>48</td>
+      <td>N-methyldiethanolamine</td>
+      <td>AAWveB</td>
+      <td>CN(CCO)CCO</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>guanidinium trifluoromethanesulfonate</td>
+      <td>AAoLEA</td>
+      <td>NC(N)=[NH2+].O=S(=O)([O-])C(F)(F)F</td>
+    </tr>
+    <tr>
+      <th>50285</th>
+      <td>zoJjS</td>
+      <td>Sairi et al. (2011)</td>
+      <td>Composition at phase equilibrium</td>
+      <td>Liquid;Gas</td>
+      <td>2</td>
+      <td>3</td>
+      <td>18</td>
+      <td>carbon dioxide</td>
+      <td>AAIYzl</td>
+      <td>O=C=O</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>guanidinium trifluoromethanesulfonate</td>
+      <td>AAoLEA</td>
+      <td>NC(N)=[NH2+].O=S(=O)([O-])C(F)(F)F</td>
+    </tr>
+    <tr>
+      <th>52324</th>
+      <td>tmQgx</td>
+      <td>Sairi et al. (2015)</td>
+      <td>Composition at phase equilibrium</td>
+      <td>Liquid;Gas</td>
+      <td>2</td>
+      <td>3</td>
+      <td>6</td>
+      <td>carbon dioxide</td>
+      <td>AAIYzl</td>
+      <td>O=C=O</td>
+      <td>water</td>
+      <td>AADYJk</td>
+      <td>O</td>
+      <td>guanidinium trifluoromethanesulfonate</td>
+      <td>AAoLEA</td>
+      <td>NC(N)=[NH2+].O=S(=O)([O-])C(F)(F)F</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="Resonance">
+<h3>Resonance<a class="headerlink" href="#Resonance" title="Link to this heading"></a></h3>
+<p>Sometimes, substructure search will not work as expected unless resonance was considered. This can be demonstrated on non-symmetrical imidazolium cations:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mol1</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s1">&#39;C[n+]1cc[n](CC)c1&#39;</span><span class="p">)</span>
+<span class="n">mol2</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s1">&#39;C[n]1cc[n+](CC)c1&#39;</span><span class="p">)</span>
+<span class="n">mol1</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/source_cookbook_39_0.png" src="../_images/source_cookbook_39_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mol2</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/source_cookbook_40_0.png" src="../_images/source_cookbook_40_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mol1</span><span class="o">.</span><span class="n">HasSubstructMatch</span><span class="p">(</span><span class="n">mol2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<p>Despite the fact that both molecules are equivalent, their graph representation is not, and current SMILES normalization (as implemented in RDKit) does not change that:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">mol1</span><span class="p">),</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">mol2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(&#39;CCn1cc[n+](C)c1&#39;, &#39;CC[n+]1ccn(C)c1&#39;)
+</pre></div></div>
+</div>
+<p>This problem can be adressed in two ways:</p>
+<ol class="arabic simple">
+<li><p>choosing SMARTS for the substructure search more accurately, e.g. ignoring atomic charges (see Daylight manuals on SMARTS for some ideas: <a class="reference external" href="https://www.daylight.com/dayhtml/doc/theory/theory.smarts.html">1</a>, <a class="reference external" href="https://www.daylight.com/dayhtml_tutorials/languages/smarts/smarts_examples.html">2</a>);</p></li>
+<li><p>considering resonance via <code class="docutils literal notranslate"><span class="pre">ResonanceMolSupplier</span></code> class.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to ILThermoPy’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-right" title="ILThermoPy API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Ivan Yu. Chernyshov.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
