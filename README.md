@@ -38,7 +38,7 @@
 
 2. [PyPI package](https://pypi.org/project/ilthermopy/): PyPI page of the package.
 
-3. [Documentation](https://ilthermopy.readthedocs.io/): cookbook, descriptive API, and other useful information.
+3. [Documentation](https://ivanchernyshov.github.io/ILThermoPy/): cookbook, descriptive API, and other useful information.
 
 4. [Update tools](update/): script for semi-automatic update of structural information of new ILThermo compounds after database's update.
 
