@@ -11,6 +11,7 @@ maintainers = [
     {name = "Ivan Yu. Chernyshov", email = "ivan.chernyshoff@gmail.com"}
 ]
 description = "A simple Python wrapper around the ILThermo 2.0 database with SMILES support"
+readme = {file = "README.md", content-type = "text/markdown"}
 license = {file = "LICENSE.md"}
 keywords = ["ionic liquids", "ilthermo", "nist", "api"]
 classifiers = [
@@ -28,7 +29,7 @@ dependencies = [
   "pandas"
 ]
 requires-python = ">= 3.7"
-dynamic = ["version", "readme"]
+dynamic = ["version"]
 
 [project.urls]
 documentation = "https://ivanchernyshov.github.io/ILThermoPy/"
@@ -37,6 +38,5 @@ issues = "https://github.com/IvanChernyshov/ILThermoPy/issues"
 
 [tool.setuptools.dynamic]
 version = {attr = "ilthermopy.__version__"}
-readme = {file = "README.md"}
 
 
