@@ -6,7 +6,7 @@ Attributes:
 
 '''
 
-__version__ = '1.1.1a'
+__version__ = '1.1.1.1'
 __updated__ = 'May 03, 2025'
 __license__ = 'MIT'
 
