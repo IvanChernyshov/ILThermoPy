@@ -28,9 +28,9 @@ class PropertyList():
     '''
     
     def __init__(self):
-        self.response = _req.GetPropertyList()
+        self._response = _req.GetPropertyList()
         try:
-            self.properties = {item['cls'].strip(): {k.strip(): v.strip() for k, v in zip(item['key'], item['name'])} for item in self.response['plist']}
+            self.properties = {item['cls'].strip(): {k.strip(): v.strip() for k, v in zip(item['key'], item['name'])} for item in self._response['plist']}
             self.key2prop = {k: v for name, lst in self.properties.items() for k, v in lst.items()}
             self.prop2key = {v: k for k, v in self.key2prop.items()}
         except (KeyError, AttributeError, TypeError, ValueError):

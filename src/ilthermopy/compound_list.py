@@ -38,7 +38,7 @@ def GetSavedCompounds() -> Compounds:
     '''
     # read data
     pkg = _importlib_resources.files('ilthermopy')
-    data_file = pkg / 'compounds.csv'
+    data_file = pkg / 'data' / 'compounds.csv'
     with _importlib_resources.as_file(data_file) as path:
         data = _pd.read_csv(path)
     # prepare data
