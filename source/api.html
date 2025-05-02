@@ -47,14 +47,123 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="cookbook.html">Cookbook</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Package API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#ilthermopy">ilthermopy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ilthermopy-requests">ilthermopy.requests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ilthermopy-data-structs">ilthermopy.data_structs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ilthermopy-compound-list">ilthermopy.compound_list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ilthermopy-search">ilthermopy.search</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ilthermopy-updates">ilthermopy.updates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ilthermopy-misc">ilthermopy.misc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ilthermopy-errors">ilthermopy.errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ilthermopy">ilthermopy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.compounds"><code class="docutils literal notranslate"><span class="pre">compounds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.CheckLastUpdate"><code class="docutils literal notranslate"><span class="pre">CheckLastUpdate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.PropertyList"><code class="docutils literal notranslate"><span class="pre">PropertyList</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.PropertyList.properties"><code class="docutils literal notranslate"><span class="pre">PropertyList.properties</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.PropertyList.key2prop"><code class="docutils literal notranslate"><span class="pre">PropertyList.key2prop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.PropertyList.prop2key"><code class="docutils literal notranslate"><span class="pre">PropertyList.prop2key</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.PropertyList.Show"><code class="docutils literal notranslate"><span class="pre">PropertyList.Show()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.GetSavedCompounds"><code class="docutils literal notranslate"><span class="pre">GetSavedCompounds()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.ShowPropertyList"><code class="docutils literal notranslate"><span class="pre">ShowPropertyList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.Search"><code class="docutils literal notranslate"><span class="pre">Search()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.GetAllEntries"><code class="docutils literal notranslate"><span class="pre">GetAllEntries()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.GetEntry"><code class="docutils literal notranslate"><span class="pre">GetEntry()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ilthermopy.requests">ilthermopy.requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.requests.BASE_URL"><code class="docutils literal notranslate"><span class="pre">BASE_URL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.requests.PROPS_URL"><code class="docutils literal notranslate"><span class="pre">PROPS_URL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.requests.SEARCH_URL"><code class="docutils literal notranslate"><span class="pre">SEARCH_URL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.requests.DATA_URL"><code class="docutils literal notranslate"><span class="pre">DATA_URL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.requests.IMAGE_URL"><code class="docutils literal notranslate"><span class="pre">IMAGE_URL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.requests.GetHomepage"><code class="docutils literal notranslate"><span class="pre">GetHomepage()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.requests.GetPropertyList"><code class="docutils literal notranslate"><span class="pre">GetPropertyList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.requests.GetEntries"><code class="docutils literal notranslate"><span class="pre">GetEntries()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.requests.GetEntryData"><code class="docutils literal notranslate"><span class="pre">GetEntryData()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.requests.GetCompoundImage"><code class="docutils literal notranslate"><span class="pre">GetCompoundImage()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ilthermopy.data_structs">ilthermopy.data_structs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.data_structs.PropertyList"><code class="docutils literal notranslate"><span class="pre">PropertyList</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.PropertyList.properties"><code class="docutils literal notranslate"><span class="pre">PropertyList.properties</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.PropertyList.key2prop"><code class="docutils literal notranslate"><span class="pre">PropertyList.key2prop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.PropertyList.prop2key"><code class="docutils literal notranslate"><span class="pre">PropertyList.prop2key</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.PropertyList.Show"><code class="docutils literal notranslate"><span class="pre">PropertyList.Show()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.data_structs.Compound"><code class="docutils literal notranslate"><span class="pre">Compound</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Compound.id"><code class="docutils literal notranslate"><span class="pre">Compound.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Compound.name"><code class="docutils literal notranslate"><span class="pre">Compound.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Compound.formula"><code class="docutils literal notranslate"><span class="pre">Compound.formula</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Compound.smiles"><code class="docutils literal notranslate"><span class="pre">Compound.smiles</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Compound.smiles_error"><code class="docutils literal notranslate"><span class="pre">Compound.smiles_error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Compound.sample"><code class="docutils literal notranslate"><span class="pre">Compound.sample</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Compound.mw"><code class="docutils literal notranslate"><span class="pre">Compound.mw</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.data_structs.ResponseToCompound"><code class="docutils literal notranslate"><span class="pre">ResponseToCompound()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.data_structs.Reference"><code class="docutils literal notranslate"><span class="pre">Reference</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Reference.full"><code class="docutils literal notranslate"><span class="pre">Reference.full</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Reference.title"><code class="docutils literal notranslate"><span class="pre">Reference.title</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.data_structs.Entry"><code class="docutils literal notranslate"><span class="pre">Entry</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.id"><code class="docutils literal notranslate"><span class="pre">Entry.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.ref"><code class="docutils literal notranslate"><span class="pre">Entry.ref</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.property"><code class="docutils literal notranslate"><span class="pre">Entry.property</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.property_type"><code class="docutils literal notranslate"><span class="pre">Entry.property_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.phases"><code class="docutils literal notranslate"><span class="pre">Entry.phases</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.components"><code class="docutils literal notranslate"><span class="pre">Entry.components</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.num_components"><code class="docutils literal notranslate"><span class="pre">Entry.num_components</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.num_phases"><code class="docutils literal notranslate"><span class="pre">Entry.num_phases</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.num_data_points"><code class="docutils literal notranslate"><span class="pre">Entry.num_data_points</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.expmeth"><code class="docutils literal notranslate"><span class="pre">Entry.expmeth</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.solvent"><code class="docutils literal notranslate"><span class="pre">Entry.solvent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.constraints"><code class="docutils literal notranslate"><span class="pre">Entry.constraints</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.data"><code class="docutils literal notranslate"><span class="pre">Entry.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.header"><code class="docutils literal notranslate"><span class="pre">Entry.header</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.footnotes"><code class="docutils literal notranslate"><span class="pre">Entry.footnotes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.data_structs.Entry.response"><code class="docutils literal notranslate"><span class="pre">Entry.response</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.data_structs.ResponseToData"><code class="docutils literal notranslate"><span class="pre">ResponseToData()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.data_structs.ResponseToEntry"><code class="docutils literal notranslate"><span class="pre">ResponseToEntry()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.data_structs.GetEntry"><code class="docutils literal notranslate"><span class="pre">GetEntry()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ilthermopy.compound_list">ilthermopy.compound_list</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.compound_list.compounds"><code class="docutils literal notranslate"><span class="pre">compounds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.compound_list.Compounds"><code class="docutils literal notranslate"><span class="pre">Compounds</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.compound_list.Compounds.data"><code class="docutils literal notranslate"><span class="pre">Compounds.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.compound_list.Compounds.id2smiles"><code class="docutils literal notranslate"><span class="pre">Compounds.id2smiles</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.compound_list.Compounds.name2smiles"><code class="docutils literal notranslate"><span class="pre">Compounds.name2smiles</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.compound_list.GetSavedCompounds"><code class="docutils literal notranslate"><span class="pre">GetSavedCompounds()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ilthermopy.search">ilthermopy.search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.search.ShowPropertyList"><code class="docutils literal notranslate"><span class="pre">ShowPropertyList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.search.Search"><code class="docutils literal notranslate"><span class="pre">Search()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.search.GetAllEntries"><code class="docutils literal notranslate"><span class="pre">GetAllEntries()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ilthermopy.updates">ilthermopy.updates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.updates.CheckLastUpdate"><code class="docutils literal notranslate"><span class="pre">CheckLastUpdate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ilthermopy.misc">ilthermopy.misc</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.misc.format_formula"><code class="docutils literal notranslate"><span class="pre">format_formula()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ilthermopy.errors">ilthermopy.errors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.errors.ILThermoSearchError"><code class="docutils literal notranslate"><span class="pre">ILThermoSearchError</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.errors.ILThermoSearchError.errors"><code class="docutils literal notranslate"><span class="pre">ILThermoSearchError.errors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.errors.ILThermoSearchError.message"><code class="docutils literal notranslate"><span class="pre">ILThermoSearchError.message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ilthermopy.errors.ILThermoResponseError"><code class="docutils literal notranslate"><span class="pre">ILThermoResponseError</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.errors.ILThermoResponseError.api_name"><code class="docutils literal notranslate"><span class="pre">ILThermoResponseError.api_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.errors.ILThermoResponseError.error"><code class="docutils literal notranslate"><span class="pre">ILThermoResponseError.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ilthermopy.errors.ILThermoResponseError.message"><code class="docutils literal notranslate"><span class="pre">ILThermoResponseError.message</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
@@ -86,29 +195,773 @@
              
   <section id="ilthermopy-api">
 <h1>ILThermoPy API<a class="headerlink" href="#ilthermopy-api" title="Link to this heading"></a></h1>
-<section id="ilthermopy">
-<h2>ilthermopy<a class="headerlink" href="#ilthermopy" title="Link to this heading"></a></h2>
+<section id="module-ilthermopy">
+<span id="ilthermopy"></span><h2>ilthermopy<a class="headerlink" href="#module-ilthermopy" title="Link to this heading"></a></h2>
+<p>This package is a Python interface for the ILThermo 2.0 database that provides
+additional information about the chemical structure of compounds</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.compounds">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.</span></span><span class="sig-name descname"><span class="pre">compounds</span></span><a class="headerlink" href="#ilthermopy.compounds" title="Link to this definition"></a></dt>
+<dd><p>Compounds object, containing info on compound structures</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#ilthermopy.data_structs.Compound" title="ilthermopy.data_structs.Compound">Compound</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.CheckLastUpdate">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.</span></span><span class="sig-name descname"><span class="pre">CheckLastUpdate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ilthermopy.CheckLastUpdate" title="Link to this definition"></a></dt>
+<dd><p>Prints date of the last ILThermo 2.0 update</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ilthermopy.PropertyList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ilthermopy.</span></span><span class="sig-name descname"><span class="pre">PropertyList</span></span><a class="headerlink" href="#ilthermopy.PropertyList" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Contains info on available physico-chemical properties and their API keys</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.PropertyList.properties">
+<span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#ilthermopy.PropertyList.properties" title="Link to this definition"></a></dt>
+<dd><p>two-level organized dictionary, interconnecting property
+types, properties, and their API keys</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.PropertyList.key2prop">
+<span class="sig-name descname"><span class="pre">key2prop</span></span><a class="headerlink" href="#ilthermopy.PropertyList.key2prop" title="Link to this definition"></a></dt>
+<dd><p>maps API keys to property names</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.PropertyList.prop2key">
+<span class="sig-name descname"><span class="pre">prop2key</span></span><a class="headerlink" href="#ilthermopy.PropertyList.prop2key" title="Link to this definition"></a></dt>
+<dd><p>maps property names to their API keys</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ilthermopy.PropertyList.Show">
+<span class="sig-name descname"><span class="pre">Show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ilthermopy.PropertyList.Show" title="Link to this definition"></a></dt>
+<dd><p>Prints list of properties available in ILThermo 2.0 database
+formatted as api_key: property_name</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.GetSavedCompounds">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.</span></span><span class="sig-name descname"><span class="pre">GetSavedCompounds</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ilthermopy.compound_list.Compounds" title="ilthermopy.compound_list.Compounds"><span class="pre">Compounds</span></a></span></span><a class="headerlink" href="#ilthermopy.GetSavedCompounds" title="Link to this definition"></a></dt>
+<dd><p>Initializes Compounds object from pre-readied csv-file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Compounds object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.ShowPropertyList">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.</span></span><span class="sig-name descname"><span class="pre">ShowPropertyList</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ilthermopy.ShowPropertyList" title="Link to this definition"></a></dt>
+<dd><p>Prints list of properties available in ILThermo 2.0 database</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.Search">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.</span></span><span class="sig-name descname"><span class="pre">Search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_compounds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">3</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">author</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keywords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#ilthermopy.Search" title="Link to this definition"></a></dt>
+<dd><p>Runs ILThermo search and returns results as a dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>compound</strong> – chemical formula, CAS registry number, or name (part or full)</p></li>
+<li><p><strong>n_compounds</strong> – number of mixture compounds</p></li>
+<li><p><strong>prop</strong> – name of physico-chemical property, only used if prop_key is not specified</p></li>
+<li><p><strong>prop_key</strong> – key of physico-chemical property (view available via GetPropertyList)</p></li>
+<li><p><strong>year</strong> – publication year</p></li>
+<li><p><strong>author</strong> – author’s last name</p></li>
+<li><p><strong>keywords</strong> – keywords presumably specified in paper’s title</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dataframe containing main info on found entries</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.GetAllEntries">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.</span></span><span class="sig-name descname"><span class="pre">GetAllEntries</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#ilthermopy.GetAllEntries" title="Link to this definition"></a></dt>
+<dd><p>Returns main info on all available ILThermo entries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dataframe containing all currently available entries</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.GetEntry">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.</span></span><span class="sig-name descname"><span class="pre">GetEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ilthermopy.data_structs.Entry" title="ilthermopy.data_structs.Entry"><span class="pre">Entry</span></a></span></span><a class="headerlink" href="#ilthermopy.GetEntry" title="Link to this definition"></a></dt>
+<dd><p>Extracts data entry from ILThermo database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>code</strong> – data entry ID</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Entry object</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="ilthermopy-requests">
-<h2>ilthermopy.requests<a class="headerlink" href="#ilthermopy-requests" title="Link to this heading"></a></h2>
+<section id="module-ilthermopy.requests">
+<span id="ilthermopy-requests"></span><h2>ilthermopy.requests<a class="headerlink" href="#module-ilthermopy.requests" title="Link to this heading"></a></h2>
+<p>Request wrappers for ILThermo APIs</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.requests.BASE_URL">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.requests.</span></span><span class="sig-name descname"><span class="pre">BASE_URL</span></span><a class="headerlink" href="#ilthermopy.requests.BASE_URL" title="Link to this definition"></a></dt>
+<dd><p>base URL of the ILThermo 2.0 database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.requests.PROPS_URL">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.requests.</span></span><span class="sig-name descname"><span class="pre">PROPS_URL</span></span><a class="headerlink" href="#ilthermopy.requests.PROPS_URL" title="Link to this definition"></a></dt>
+<dd><p>relative URL for the property list API</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.requests.SEARCH_URL">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.requests.</span></span><span class="sig-name descname"><span class="pre">SEARCH_URL</span></span><a class="headerlink" href="#ilthermopy.requests.SEARCH_URL" title="Link to this definition"></a></dt>
+<dd><p>relative URL for the search API</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.requests.DATA_URL">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.requests.</span></span><span class="sig-name descname"><span class="pre">DATA_URL</span></span><a class="headerlink" href="#ilthermopy.requests.DATA_URL" title="Link to this definition"></a></dt>
+<dd><p>relative URL for loading entrie’s data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.requests.IMAGE_URL">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.requests.</span></span><span class="sig-name descname"><span class="pre">IMAGE_URL</span></span><a class="headerlink" href="#ilthermopy.requests.IMAGE_URL" title="Link to this definition"></a></dt>
+<dd><p>relative URL for compound’s image API</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.requests.GetHomepage">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.requests.</span></span><span class="sig-name descname"><span class="pre">GetHomepage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ilthermopy.requests.GetHomepage" title="Link to this definition"></a></dt>
+<dd><p>Returns HTML of the ILThermo’s homepage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HTML-formatted ILThermo homepage (JS functionality disabled)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.requests.GetPropertyList">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.requests.</span></span><span class="sig-name descname"><span class="pre">GetPropertyList</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ilthermopy.requests.GetPropertyList" title="Link to this definition"></a></dt>
+<dd><p>Extracts available ILThermo properties and their API keys</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary containing two-level structured info on
+currently available physchemical properties and their API keys</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.requests.GetEntries">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.requests.</span></span><span class="sig-name descname"><span class="pre">GetEntries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_compounds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">3</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">author</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keywords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ilthermopy.requests.GetEntries" title="Link to this definition"></a></dt>
+<dd><p>Wrapper for database search request</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>compound</strong> – chemical formula, CAS registry number, or name (part or full)</p></li>
+<li><p><strong>n_compounds</strong> – number of mixture compounds</p></li>
+<li><p><strong>prop_key</strong> – key of physico-chemical property (view available via GetPropertyList)</p></li>
+<li><p><strong>year</strong> – publication year</p></li>
+<li><p><strong>author</strong> – author’s last name</p></li>
+<li><p><strong>keywords</strong> – keywords presumably specified in paper’s title</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary containing ILThermo search response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.requests.GetEntryData">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.requests.</span></span><span class="sig-name descname"><span class="pre">GetEntryData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ilthermopy.requests.GetEntryData" title="Link to this definition"></a></dt>
+<dd><p>Wrapper for loading of data entry</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>setid</strong> – entry ID</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary containing info on data entry, including reference, compounds,
+physico-chemical data, etc.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.requests.GetCompoundImage">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.requests.</span></span><span class="sig-name descname"><span class="pre">GetCompoundImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#ilthermopy.requests.GetCompoundImage" title="Link to this definition"></a></dt>
+<dd><p>Wrapper for loading of compound’s image</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>idout</strong> – compound ID</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>bytes-formatted PNG image</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="ilthermopy-data-structs">
-<h2>ilthermopy.data_structs<a class="headerlink" href="#ilthermopy-data-structs" title="Link to this heading"></a></h2>
+<section id="module-ilthermopy.data_structs">
+<span id="ilthermopy-data-structs"></span><h2>ilthermopy.data_structs<a class="headerlink" href="#module-ilthermopy.data_structs" title="Link to this heading"></a></h2>
+<p>Main classes for quering the ILThermo 2.0 Database</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.PropertyList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ilthermopy.data_structs.</span></span><span class="sig-name descname"><span class="pre">PropertyList</span></span><a class="headerlink" href="#ilthermopy.data_structs.PropertyList" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Contains info on available physico-chemical properties and their API keys</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.PropertyList.properties">
+<span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#ilthermopy.data_structs.PropertyList.properties" title="Link to this definition"></a></dt>
+<dd><p>two-level organized dictionary, interconnecting property
+types, properties, and their API keys</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.PropertyList.key2prop">
+<span class="sig-name descname"><span class="pre">key2prop</span></span><a class="headerlink" href="#ilthermopy.data_structs.PropertyList.key2prop" title="Link to this definition"></a></dt>
+<dd><p>maps API keys to property names</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.PropertyList.prop2key">
+<span class="sig-name descname"><span class="pre">prop2key</span></span><a class="headerlink" href="#ilthermopy.data_structs.PropertyList.prop2key" title="Link to this definition"></a></dt>
+<dd><p>maps property names to their API keys</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.PropertyList.Show">
+<span class="sig-name descname"><span class="pre">Show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ilthermopy.data_structs.PropertyList.Show" title="Link to this definition"></a></dt>
+<dd><p>Prints list of properties available in ILThermo 2.0 database
+formatted as api_key: property_name</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Compound">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ilthermopy.data_structs.</span></span><span class="sig-name descname"><span class="pre">Compound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formula</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smiles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smiles_error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ilthermopy.data_structs.Compound" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class describing a chemical compound</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Compound.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ilthermopy.data_structs.Compound.id" title="Link to this definition"></a></dt>
+<dd><p>compound ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Compound.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ilthermopy.data_structs.Compound.name" title="Link to this definition"></a></dt>
+<dd><p>compound name</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Compound.formula">
+<span class="sig-name descname"><span class="pre">formula</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ilthermopy.data_structs.Compound.formula" title="Link to this definition"></a></dt>
+<dd><p>chemical formula of compound</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Compound.smiles">
+<span class="sig-name descname"><span class="pre">smiles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ilthermopy.data_structs.Compound.smiles" title="Link to this definition"></a></dt>
+<dd><p>chemical structure in SMILES format; SMILES is not provided by ILThermo database,
+and is retrieved from manually verified data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Compound.smiles_error">
+<span class="sig-name descname"><span class="pre">smiles_error</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ilthermopy.data_structs.Compound.smiles_error" title="Link to this definition"></a></dt>
+<dd><p>describes reason why SMILES was not retrieved from pre-readied data;
+None if SMILES was retrieved successfully</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Compound.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ilthermopy.data_structs.Compound.sample" title="Link to this definition"></a></dt>
+<dd><p>dictionary containing info on compound’s source, purity, etc.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Compound.mw">
+<span class="sig-name descname"><span class="pre">mw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ilthermopy.data_structs.Compound.mw" title="Link to this definition"></a></dt>
+<dd><p>molar weight, g/mol</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.ResponseToCompound">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.data_structs.</span></span><span class="sig-name descname"><span class="pre">ResponseToCompound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ilthermopy.data_structs.Compound" title="ilthermopy.data_structs.Compound"><span class="pre">Compound</span></a></span></span><a class="headerlink" href="#ilthermopy.data_structs.ResponseToCompound" title="Link to this definition"></a></dt>
+<dd><p>Transforms entry data API response to the Compound object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>response</strong> – dictionary describing compound in entry data API response,
+e.g. r[‘components’][0]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Compound object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Reference">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ilthermopy.data_structs.</span></span><span class="sig-name descname"><span class="pre">Reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ilthermopy.data_structs.Reference" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class describing a scientific paper</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Reference.full">
+<span class="sig-name descname"><span class="pre">full</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ilthermopy.data_structs.Reference.full" title="Link to this definition"></a></dt>
+<dd><p>reference text without title</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Reference.title">
+<span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ilthermopy.data_structs.Reference.title" title="Link to this definition"></a></dt>
+<dd><p>title of the paper</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ilthermopy.data_structs.</span></span><span class="sig-name descname"><span class="pre">Entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ilthermopy.data_structs.Reference" title="ilthermopy.data_structs.Reference"><span class="pre">Reference</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">property</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phases</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#ilthermopy.data_structs.Compound" title="ilthermopy.data_structs.Compound"><span class="pre">Compound</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_phases</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_data_points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expmeth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">footnotes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ilthermopy.data_structs.Entry" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class describing data entry</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.id" title="Link to this definition"></a></dt>
+<dd><p>data entry ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.ref">
+<span class="sig-name descname"><span class="pre">ref</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#ilthermopy.data_structs.Reference" title="ilthermopy.data_structs.Reference"><span class="pre">Reference</span></a></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.ref" title="Link to this definition"></a></dt>
+<dd><p>source of physico-chemical data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.property">
+<span class="sig-name descname"><span class="pre">property</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.property" title="Link to this definition"></a></dt>
+<dd><p>measured property</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.property_type">
+<span class="sig-name descname"><span class="pre">property_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.property_type" title="Link to this definition"></a></dt>
+<dd><p>type of measured property</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.phases">
+<span class="sig-name descname"><span class="pre">phases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.phases" title="Link to this definition"></a></dt>
+<dd><p>list of phases (phase names)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.components">
+<span class="sig-name descname"><span class="pre">components</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#ilthermopy.data_structs.Compound" title="ilthermopy.data_structs.Compound"><span class="pre">Compound</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.components" title="Link to this definition"></a></dt>
+<dd><p>list of chemical components</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.num_components">
+<span class="sig-name descname"><span class="pre">num_components</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.num_components" title="Link to this definition"></a></dt>
+<dd><p>number of chemical components</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.num_phases">
+<span class="sig-name descname"><span class="pre">num_phases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.num_phases" title="Link to this definition"></a></dt>
+<dd><p>number of phases</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.num_data_points">
+<span class="sig-name descname"><span class="pre">num_data_points</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.num_data_points" title="Link to this definition"></a></dt>
+<dd><p>number of data points</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.expmeth">
+<span class="sig-name descname"><span class="pre">expmeth</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.expmeth" title="Link to this definition"></a></dt>
+<dd><p>experimental method</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.solvent">
+<span class="sig-name descname"><span class="pre">solvent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.solvent" title="Link to this definition"></a></dt>
+<dd><p>solvent</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.constraints">
+<span class="sig-name descname"><span class="pre">constraints</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.constraints" title="Link to this definition"></a></dt>
+<dd><p>experimental constraints</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.data">
+<span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">DataFrame</span></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.data" title="Link to this definition"></a></dt>
+<dd><p>experimental data in tabular format; columns are formatted as Vi and dVi,
+where Vi is i-th property, and dVi is a corresponding measurement error</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.header">
+<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.header" title="Link to this definition"></a></dt>
+<dd><p>fullnames of the dataframe’s columns</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.footnotes">
+<span class="sig-name descname"><span class="pre">footnotes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.footnotes" title="Link to this definition"></a></dt>
+<dd><p>notes to the provided data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.Entry.response">
+<span class="sig-name descname"><span class="pre">response</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span></em><a class="headerlink" href="#ilthermopy.data_structs.Entry.response" title="Link to this definition"></a></dt>
+<dd><p>data entry API response</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.ResponseToData">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.data_structs.</span></span><span class="sig-name descname"><span class="pre">ResponseToData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ilthermopy.data_structs.ResponseToData" title="Link to this definition"></a></dt>
+<dd><p>Extracts and formats data from data entry API response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>response</strong> – data entry API response</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dataframe containing experimental data, and dictionary, mapping dataframe’s
+column names to fullnames, containing property name, measurement unit,
+and phase name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.ResponseToEntry">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.data_structs.</span></span><span class="sig-name descname"><span class="pre">ResponseToEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ilthermopy.data_structs.Entry" title="ilthermopy.data_structs.Entry"><span class="pre">Entry</span></a></span></span><a class="headerlink" href="#ilthermopy.data_structs.ResponseToEntry" title="Link to this definition"></a></dt>
+<dd><p>Transforms data entry API response to Entry object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> – data entry ID</p></li>
+<li><p><strong>response</strong> – data entry API response</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Entry object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.data_structs.GetEntry">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.data_structs.</span></span><span class="sig-name descname"><span class="pre">GetEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ilthermopy.data_structs.Entry" title="ilthermopy.data_structs.Entry"><span class="pre">Entry</span></a></span></span><a class="headerlink" href="#ilthermopy.data_structs.GetEntry" title="Link to this definition"></a></dt>
+<dd><p>Extracts data entry from ILThermo database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>code</strong> – data entry ID</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Entry object</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="ilthermopy-compound-list">
-<h2>ilthermopy.compound_list<a class="headerlink" href="#ilthermopy-compound-list" title="Link to this heading"></a></h2>
+<section id="module-ilthermopy.compound_list">
+<span id="ilthermopy-compound-list"></span><h2>ilthermopy.compound_list<a class="headerlink" href="#module-ilthermopy.compound_list" title="Link to this heading"></a></h2>
+<p>Loads pre-readied info on compounds structure</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.compound_list.compounds">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.compound_list.</span></span><span class="sig-name descname"><span class="pre">compounds</span></span><a class="headerlink" href="#ilthermopy.compound_list.compounds" title="Link to this definition"></a></dt>
+<dd><p>Compounds object, containing info on compound structures</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#ilthermopy.compound_list.Compounds" title="ilthermopy.compound_list.Compounds">Compounds</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ilthermopy.compound_list.Compounds">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ilthermopy.compound_list.</span></span><span class="sig-name descname"><span class="pre">Compounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id2smiles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name2smiles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ilthermopy.compound_list.Compounds" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Contains info on compounds’ structure</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.compound_list.Compounds.data">
+<span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">DataFrame</span></em><a class="headerlink" href="#ilthermopy.compound_list.Compounds.data" title="Link to this definition"></a></dt>
+<dd><p>dataframe, containing compound’s ID, name, chemical formula (all
+extracted from ILThermo 2.0), and manually verified SMILES</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.compound_list.Compounds.id2smiles">
+<span class="sig-name descname"><span class="pre">id2smiles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ilthermopy.compound_list.Compounds.id2smiles" title="Link to this definition"></a></dt>
+<dd><p>dictionary mapping ILThermo’s compound ids to SMILES</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.compound_list.Compounds.name2smiles">
+<span class="sig-name descname"><span class="pre">name2smiles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ilthermopy.compound_list.Compounds.name2smiles" title="Link to this definition"></a></dt>
+<dd><p>dictionary mapping ILThermo’s compound names to SMILES</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.compound_list.GetSavedCompounds">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.compound_list.</span></span><span class="sig-name descname"><span class="pre">GetSavedCompounds</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ilthermopy.compound_list.Compounds" title="ilthermopy.compound_list.Compounds"><span class="pre">Compounds</span></a></span></span><a class="headerlink" href="#ilthermopy.compound_list.GetSavedCompounds" title="Link to this definition"></a></dt>
+<dd><p>Initializes Compounds object from pre-readied csv-file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Compounds object</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="ilthermopy-search">
-<h2>ilthermopy.search<a class="headerlink" href="#ilthermopy-search" title="Link to this heading"></a></h2>
+<section id="module-ilthermopy.search">
+<span id="ilthermopy-search"></span><h2>ilthermopy.search<a class="headerlink" href="#module-ilthermopy.search" title="Link to this heading"></a></h2>
+<p>Search-related functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.search.ShowPropertyList">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.search.</span></span><span class="sig-name descname"><span class="pre">ShowPropertyList</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ilthermopy.search.ShowPropertyList" title="Link to this definition"></a></dt>
+<dd><p>Prints list of properties available in ILThermo 2.0 database</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.search.Search">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.search.</span></span><span class="sig-name descname"><span class="pre">Search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_compounds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">3</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">author</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keywords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#ilthermopy.search.Search" title="Link to this definition"></a></dt>
+<dd><p>Runs ILThermo search and returns results as a dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>compound</strong> – chemical formula, CAS registry number, or name (part or full)</p></li>
+<li><p><strong>n_compounds</strong> – number of mixture compounds</p></li>
+<li><p><strong>prop</strong> – name of physico-chemical property, only used if prop_key is not specified</p></li>
+<li><p><strong>prop_key</strong> – key of physico-chemical property (view available via GetPropertyList)</p></li>
+<li><p><strong>year</strong> – publication year</p></li>
+<li><p><strong>author</strong> – author’s last name</p></li>
+<li><p><strong>keywords</strong> – keywords presumably specified in paper’s title</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dataframe containing main info on found entries</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.search.GetAllEntries">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.search.</span></span><span class="sig-name descname"><span class="pre">GetAllEntries</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#ilthermopy.search.GetAllEntries" title="Link to this definition"></a></dt>
+<dd><p>Returns main info on all available ILThermo entries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dataframe containing all currently available entries</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="ilthermopy-updates">
-<h2>ilthermopy.updates<a class="headerlink" href="#ilthermopy-updates" title="Link to this heading"></a></h2>
+<section id="module-ilthermopy.updates">
+<span id="ilthermopy-updates"></span><h2>ilthermopy.updates<a class="headerlink" href="#module-ilthermopy.updates" title="Link to this heading"></a></h2>
+<p>Checks if ilthermopy package is up-to-date with ILThermo 2.0 database</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.updates.CheckLastUpdate">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.updates.</span></span><span class="sig-name descname"><span class="pre">CheckLastUpdate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ilthermopy.updates.CheckLastUpdate" title="Link to this definition"></a></dt>
+<dd><p>Prints date of the last ILThermo 2.0 update</p>
+</dd></dl>
+
 </section>
-<section id="ilthermopy-misc">
-<h2>ilthermopy.misc<a class="headerlink" href="#ilthermopy-misc" title="Link to this heading"></a></h2>
+<section id="module-ilthermopy.misc">
+<span id="ilthermopy-misc"></span><h2>ilthermopy.misc<a class="headerlink" href="#module-ilthermopy.misc" title="Link to this heading"></a></h2>
+<p>Miscellaneous functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ilthermopy.misc.format_formula">
+<span class="sig-prename descclassname"><span class="pre">ilthermopy.misc.</span></span><span class="sig-name descname"><span class="pre">format_formula</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formula</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ilthermopy.misc.format_formula" title="Link to this definition"></a></dt>
+<dd><p>Formats chemical formula from ILThermo format to the alphabetically-ordered one</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>formula</strong> – HTML-formatted chemical formula in ILThermo 2.0 format</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Alphabetically ordered chemical formula</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">format_formula</span><span class="p">(</span><span class="s1">&#39;C&lt;SUB&gt;4&lt;/SUB&gt;H&lt;SUB&gt;10&lt;/SUB&gt;O&#39;</span><span class="p">)</span>
+<span class="go">&#39;C4 H10 O&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </section>
-<section id="ilthermopy-errors">
-<h2>ilthermopy.errors<a class="headerlink" href="#ilthermopy-errors" title="Link to this heading"></a></h2>
+<section id="module-ilthermopy.errors">
+<span id="ilthermopy-errors"></span><h2>ilthermopy.errors<a class="headerlink" href="#module-ilthermopy.errors" title="Link to this heading"></a></h2>
+<p>Custom errors for the package</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="ilthermopy.errors.ILThermoSearchError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ilthermopy.errors.</span></span><span class="sig-name descname"><span class="pre">ILThermoSearchError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">errors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ilthermopy.errors.ILThermoSearchError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Custom error for unsuccessful search queries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>errors</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – error list in search response</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.errors.ILThermoSearchError.errors">
+<span class="sig-name descname"><span class="pre">errors</span></span><a class="headerlink" href="#ilthermopy.errors.ILThermoSearchError.errors" title="Link to this definition"></a></dt>
+<dd><p>error list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.errors.ILThermoSearchError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><a class="headerlink" href="#ilthermopy.errors.ILThermoSearchError.message" title="Link to this definition"></a></dt>
+<dd><p>human readable string describing the exception</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ilthermopy.errors.ILThermoResponseError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ilthermopy.errors.</span></span><span class="sig-name descname"><span class="pre">ILThermoResponseError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ilthermopy.errors.ILThermoResponseError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Custom error for unexpected responses</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>api_name</strong> (<em>str</em>) – ILThermo’s API</p></li>
+<li><p><strong>error</strong> (<em>str</em>) – text of the error</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.errors.ILThermoResponseError.api_name">
+<span class="sig-name descname"><span class="pre">api_name</span></span><a class="headerlink" href="#ilthermopy.errors.ILThermoResponseError.api_name" title="Link to this definition"></a></dt>
+<dd><p>ILThermo’s API</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.errors.ILThermoResponseError.error">
+<span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#ilthermopy.errors.ILThermoResponseError.error" title="Link to this definition"></a></dt>
+<dd><p>text of the error</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ilthermopy.errors.ILThermoResponseError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><a class="headerlink" href="#ilthermopy.errors.ILThermoResponseError.message" title="Link to this definition"></a></dt>
+<dd><p>human readable string describing the exception</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 
