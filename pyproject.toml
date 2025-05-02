@@ -11,7 +11,7 @@ maintainers = [
     {name = "Ivan Yu. Chernyshov", email = "ivan.chernyshoff@gmail.com"}
 ]
 description = "A simple Python wrapper around the ILThermo 2.0 database with SMILES support"
-license = {file = "LICENSE"}
+license = {file = "LICENSE.md"}
 keywords = ["ionic liquids", "ilthermo", "nist", "api"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
