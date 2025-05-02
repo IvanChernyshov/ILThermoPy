@@ -1,6 +1,18 @@
 Changelog
 =========
 
+1.1.1
+-----
+
+* Adds small code fixes.
+
+* Migrates package info from ``setup.cfg`` to ``pyproject.toml``.
+
+* Changes layout to ``src``.
+
+* Adds tests.
+
+
 1.1.0
 -----
 
