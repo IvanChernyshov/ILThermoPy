@@ -6,16 +6,16 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Changelog &mdash; ILThermoPy 1.1.1 documentation</title>
+  <title>Changelog &mdash; ILThermoPy 1.1.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=58fbf978"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/documentation_options.js?v=6f037312"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -47,9 +47,10 @@
 <li class="toctree-l1"><a class="reference internal" href="cookbook.html">Cookbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Package API</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">1.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">1.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">1.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">1.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">1.0.0</a></li>
 </ul>
 </li>
 </ul>
@@ -81,7 +82,24 @@
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h1>
 <section id="id1">
-<h2>1.1.1<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<h2>1.1.2<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Refreshes public-facing documentation and package metadata after the move to
+the <code class="docutils literal notranslate"><span class="pre">muCommons</span></code> GitHub organization.</p></li>
+<li><p>Updates repository, documentation, issue-tracker, and changelog links to the
+new public locations.</p></li>
+<li><p>Clarifies project status: ILThermoPy is an unofficial ILThermo 2.0
+access/enrichment package, is external-service-dependent, and is not
+affiliated with or endorsed by NIST.</p></li>
+<li><p>Updates PyPI-facing metadata, including the short description, keywords,
+project URLs, and development-status classifier.</p></li>
+<li><p>Adds citation metadata via <code class="docutils literal notranslate"><span class="pre">CITATION.cff</span></code> to prepare the repository for
+Zenodo release archiving.</p></li>
+<li><p>No runtime-code changes, public API changes, or dependency changes.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>1.1.1<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Adds small code fixes.</p></li>
 <li><p>Migrates package info from <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> to <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p></li>
@@ -89,16 +107,16 @@
 <li><p>Adds tests.</p></li>
 </ul>
 </section>
-<section id="id2">
-<h2>1.1.0<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<section id="id3">
+<h2>1.1.0<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Updates stored structural data (up to June 4, 2024).</p></li>
 <li><p>Renames the <code class="docutils literal notranslate"><span class="pre">GetCompounds</span></code> function to <a class="reference internal" href="api.html#ilthermopy.compound_list.GetSavedCompounds" title="ilthermopy.compound_list.GetSavedCompounds"><code class="xref py py-func docutils literal notranslate"><span class="pre">ilthermopy.compound_list.GetSavedCompounds()</span></code></a>.</p></li>
 <li><p>Adds functionality for semi-automatic update of structural information of ILThermo compounds.</p></li>
 </ul>
 </section>
-<section id="id3">
-<h2>1.0.0<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<section id="id4">
+<h2>1.0.0<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
 <p>First release.</p>
 </section>
 </section>
@@ -113,7 +131,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Ivan Yu. Chernyshov.</p>
+    <p>&#169; Copyright 2023-2026, Ivan Yu. Chernyshov.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
