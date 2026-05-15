@@ -8,6 +8,7 @@ need ILThermo data in a more structure-aware form.
 
 [![PyPI](https://img.shields.io/pypi/v/ilthermopy.svg)](https://pypi.org/project/ilthermopy/)
 [![Documentation](https://img.shields.io/badge/docs-muCommons-blue.svg)](https://mucommons.github.io/ILThermoPy/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20218373.svg)](https://doi.org/10.5281/zenodo.20218373)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
 
 ## Status and scope
@@ -83,7 +84,11 @@ pip install ilthermopy
 
 ## Citation
 
-If ILThermoPy is useful in your work, please cite the software using the
-metadata in [`CITATION.cff`](CITATION.cff). A DOI is not included in the source
-tree; enable Zenodo GitHub integration before creating a GitHub release if you
-want Zenodo to archive the release and generate one automatically.
+If ILThermoPy is useful in your work, please cite the Zenodo concept DOI
+(all versions), which resolves to the latest archived release:
+
+> Ivan Yu. Chernyshov. (2026). *ILThermoPy: unofficial ILThermo 2.0
+> access and SMILES enrichment for ionic-liquid data workflows* [Computer
+> software]. Zenodo. https://doi.org/10.5281/zenodo.20218373
+
+Citation metadata is also provided in [`CITATION.cff`](CITATION.cff).

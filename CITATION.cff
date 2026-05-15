@@ -1,8 +1,7 @@
 cff-version: 1.2.0
-message: "If you use ILThermoPy, please cite the software using the metadata below."
+message: "If you use ILThermoPy, please cite the software using the Zenodo concept DOI below."
 title: "ILThermoPy: unofficial ILThermo 2.0 access and SMILES enrichment for ionic-liquid data workflows"
-version: "1.1.2"
-date-released: "2026-05-16"
+doi: "10.5281/zenodo.20218373"
 authors:
   - family-names: "Chernyshov"
     given-names: "Ivan Yu."
