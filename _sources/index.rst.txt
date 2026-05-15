@@ -96,10 +96,14 @@ Useful links
 Citation
 ========
 
-If ILThermoPy is useful in your work, please cite the software using the
-metadata in the repository ``CITATION.cff`` file. A DOI is not included in the
-source tree; enable Zenodo GitHub integration before creating a GitHub release
-if you want Zenodo to archive the release and generate one automatically.
+If ILThermoPy is useful in your work, please cite the Zenodo concept DOI
+(all versions), which resolves to the latest archived release:
+
+   Ivan Yu. Chernyshov. (2026). *ILThermoPy: unofficial ILThermo 2.0
+   access and SMILES enrichment for ionic-liquid data workflows* [Computer
+   software]. Zenodo. https://doi.org/10.5281/zenodo.20218373
+
+Citation metadata is also provided in the repository ``CITATION.cff`` file.
 
 
 Indices and tables
