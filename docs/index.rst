@@ -6,57 +6,100 @@ Welcome to ILThermoPy's documentation!
    :hidden:
    :maxdepth: 2
    :caption: Contents:
-   
+
    Cookbook <source/cookbook.ipynb>
    Package API <source/api>
    Changelog <source/changelog>
 
 
-**ILThermoPy** is a Python library to access `ILThermo 2.0`_, which is the NIST standard reference database, containing measured physico-chemical properties for a wide spectrum of ionic liquids.
-Despite the significant amount of stored data, ILThermo 2.0 cannot be used for machine learning, parametrization of empirical physical models, and other data-driven approaches as is.
-The reason is that ILThermo 2.0 describes molecular structure of IL's components with a chemical name only, whereas SMILES, InChI and other structure identifiers are not available.
+**ILThermoPy** is an unofficial Python package for retrieving data from
+`ILThermo 2.0`_ and enriching ionic-liquid records with molecular identifiers
+such as SMILES. It is intended for cheminformatics, molecular thermodynamics,
+and machine-learning workflows that need ILThermo data in a more
+structure-aware form.
 
-**ILThermoPy** solves this problem via the preliminary semi-automatic conversion of compound names to SMILES with subsequent manual validation.
-This allows one to conduct a substructural search and to immediately generate chemoinformatic descriptors for the extracted data.
+Status and scope
+================
 
-.. note::
-   There is no official web API available to access ILThermo 2.0, therefore the stability of this library depends on the stability of the JSON/javascript framework of the webservice.
+* Usable package for accessing ILThermo 2.0 data and combining retrieved records
+  with stored molecular-structure annotations.
+* Unofficial interface: ILThermoPy is not affiliated with, maintained by, or
+  endorsed by NIST.
+* External-service-dependent: ILThermo 2.0 does not provide a stable public web
+  API, so this package depends on the current behavior of the ILThermo web
+  service.
+* Molecular-identifier enrichment depends on stored mappings from ILThermo
+  compound identifiers to manually checked structural data; new ILThermo
+  updates may require refreshing those mappings.
+* Intended for cheminformatics, molecular thermodynamics, and ML-ready
+  ionic-liquid data workflows.
 
-.. warning::
-   ILThermo 2.0 database is regularly updated, at least once a year.
-   Those updates change internal compound IDs, which are used to add SMILES to the extracted data.
-   Therefore, after database's update old versions of **ILThermoPy** can fail to retrieve structural data at least for some of the new entries.
+What problem does it solve?
+===========================
 
+ILThermo 2.0 contains experimental physicochemical-property data for ionic
+liquids, but the public web interface primarily describes molecular components
+by names. For many downstream workflows, names are not enough: cheminformatics,
+substructure search, descriptor generation, data cleaning, and ML model building
+usually require machine-readable molecular identifiers.
+
+ILThermoPy bridges this gap by retrieving ILThermo records and adding stored
+SMILES annotations for known ionic-liquid components. The structural annotations
+were prepared through semi-automatic name-to-structure conversion followed by
+manual validation, making the extracted data easier to use in computational
+chemistry and data-driven thermodynamics workflows.
+
+Typical use cases include:
+
+* collecting ILThermo records for selected properties, compounds, or years;
+* preparing ionic-liquid datasets for descriptor calculation and ML pipelines;
+* linking thermodynamic measurements to cation/anion structures;
+* checking which ILThermo compounds already have stored structural annotations;
+* updating local structural mappings when the external ILThermo database
+  changes.
+
+The package is intentionally small. It should be treated as a practical access
+and enrichment layer over an external web service, not as an official ILThermo
+API or a complete curated thermodynamic database.
 
 Installation
 ============
 
-**ILThermoPy** can be installed as a `PyPI package`_:
+ILThermoPy can be installed from the `PyPI package`_:
 
-.. code-block::
-   
-   > pip install ilthermopy
+.. code-block:: bash
+
+   pip install ilthermopy
 
 
 Requirements
 ============
 
 1. Python 3.7+;
-
 2. requests;
-
 3. pandas;
-
-4. importlib_resources (for Python 3.7 and 3.8).
+4. importlib_resources for Python 3.7 and 3.8.
 
 
 Useful links
 ============
 
-1. `ILThermo 2.0`_: webapp accessing ILThermo 2.0 database.
-2. `GitHub`_: GitHub page of the package.
-3. `PyPI package`_: PyPI page of the package.
-4. `Update tools`_: script for semi-automatic update of structural information of new ILThermo compounds after database's update.
+1. `ILThermo 2.0`_: public web application for the ILThermo 2.0 database.
+2. `Documentation`_: cookbook, API reference, and changelog.
+3. `PyPI package`_: package distribution page.
+4. `GitHub repository`_: source code and release history.
+5. `Issue tracker`_: bug reports and maintenance notes.
+6. `Update tools`_: scripts for semi-automatic refresh of structural
+   information after ILThermo database updates.
+
+
+Citation
+========
+
+If ILThermoPy is useful in your work, please cite the software using the
+metadata in the repository ``CITATION.cff`` file. A DOI is not included in the
+source tree; enable Zenodo GitHub integration before creating a GitHub release
+if you want Zenodo to archive the release and generate one automatically.
 
 
 Indices and tables
@@ -66,8 +109,9 @@ Indices and tables
 * :ref:`search`
 
 
-
 .. _ILThermo 2.0: https://ilthermo.boulder.nist.gov/
-.. _GitHub: https://github.com/IvanChernyshov/ILThermoPy
+.. _Documentation: https://mucommons.github.io/ILThermoPy/
 .. _PyPI package: https://pypi.org/project/ilthermopy/
-.. _Update tools: https://github.com/IvanChernyshov/ILThermoPy/tree/main/update
+.. _GitHub repository: https://github.com/muCommons/ILThermoPy
+.. _Issue tracker: https://github.com/muCommons/ILThermoPy/issues
+.. _Update tools: https://github.com/muCommons/ILThermoPy/tree/main/update

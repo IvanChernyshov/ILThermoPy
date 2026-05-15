@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use ILThermoPy, please cite the software using the metadata below."
+title: "ILThermoPy: unofficial ILThermo 2.0 access and SMILES enrichment for ionic-liquid data workflows"
+version: "1.1.2"
+date-released: "2026-05-16"
+authors:
+  - family-names: "Chernyshov"
+    given-names: "Ivan Yu."
+repository-code: "https://github.com/muCommons/ILThermoPy"
+url: "https://mucommons.github.io/ILThermoPy/"
+license: "MIT"
+keywords:
+  - "ionic liquids"
+  - "ILThermo"
+  - "thermodynamics"
+  - "cheminformatics"
+  - "SMILES"
+  - "machine learning"
