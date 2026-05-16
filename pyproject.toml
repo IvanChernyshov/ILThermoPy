@@ -10,10 +10,21 @@ authors = [
 maintainers = [
     {name = "Ivan Yu. Chernyshov", email = "ivan.chernyshoff@gmail.com"}
 ]
-description = "Unofficial ILThermo 2.0 access and SMILES enrichment for ionic-liquid data workflows"
+description = "Unofficial Python client for ILThermo 2.0 with SMILES-enriched ionic-liquid data for cheminformatics, thermodynamics, and ML workflows"
 readme = {file = "README.md", content-type = "text/markdown"}
 license = {file = "LICENSE.md"}
-keywords = ["ionic liquids", "ilthermo", "thermodynamics", "cheminformatics", "smiles", "machine learning"]
+keywords = [
+    "ionic liquids",
+    "ILThermo",
+    "molecular thermodynamics",
+    "thermodynamic data",
+    "cheminformatics",
+    "chemical data",
+    "SMILES",
+    "machine learning",
+    "scientific Python",
+    "physical chemistry",
+]
 classifiers = [
     "Development Status :: 4 - Beta",
     "License :: OSI Approved :: MIT License",
@@ -36,8 +47,7 @@ Documentation = "https://mucommons.github.io/ILThermoPy/"
 Repository = "https://github.com/muCommons/ILThermoPy"
 Issues = "https://github.com/muCommons/ILThermoPy/issues"
 Changelog = "https://mucommons.github.io/ILThermoPy/source/changelog.html"
+Citation = "https://doi.org/10.5281/zenodo.20218373"
 
 [tool.setuptools.dynamic]
 version = {attr = "ilthermopy.__version__"}
-
-
